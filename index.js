@@ -119,10 +119,10 @@ ${res.questions}
 
         // takes the template literal content and writes it to a new readme file.
         fs.writeFile("customREADME.md", readmeContent, err => {
-            
+
             // Error message
             if (err) throw err;
-            
+
             // Success Message
             console.log("You created a readme!")
         })
