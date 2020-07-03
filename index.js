@@ -58,9 +58,23 @@ inquirer
             name: 'questions',
             message: 'What sort of questions remain to solve?',
             default: 'N/A'
-        },
+        }
     ])
-    .then();
+    .then(res => {
+        console.log(`
+            ${res.gitUser}
+            ${res.title}
+            ${res.description}
+            ${res.install}
+            ${res.usage}
+            ${res.licence}
+            ${res.contribute}
+            ${res.tests}
+            ${res.questions}
+        `);
+    }
+
+    );
 
 
 
