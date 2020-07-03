@@ -61,20 +61,76 @@ inquirer
         }
     ])
     .then(res => {
-        console.log(`
-            ${res.gitUser}
-            ${res.title}
-            ${res.description}
-            ${res.install}
-            ${res.usage}
-            ${res.licence}
-            ${res.contribute}
-            ${res.tests}
-            ${res.questions}
-        `);
-    }
+        // console.log(`
+        //     ${res.gitUser}
+        //     ${res.title}
+        //     ${res.description}
+        //     ${res.install}
+        //     ${res.usage}
+        //     ${res.licence}
+        //     ${res.contribute}
+        //     ${res.tests}
+        //     ${res.questions}
+        // `);
 
-    );
+        // "Hard coded framework for readme"
+        const readmeContent = `
+        # ${res.title}
+
+        ## Table of Contents
+        * [Description](#description)
+        * [Installation](#installation)
+        * [Usage](#usage)
+        * [License](#license)
+        * [Contributing](#contributing)
+        * [Tests](#tests)
+        * [Questions](#questions)
+
+        ---
+
+        ## Description
+        ${res.description}
+
+        ---
+
+        ## Installation
+        ${res.install}
+
+        ---
+
+        ## Usage
+        ${res.usage}
+
+        ---
+
+        ## License
+        ${res.licence}
+
+        ---
+
+        ## Contributing
+        ${res.contribute}
+
+        ---
+
+        ## Tests
+        ${res.tests}
+
+        ---
+
+        ## Questions
+        ${res.questions}
+
+        ---
+
+        ### Profile: github.com/${res.gitUser}
+        
+        ![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)
+        `;
+        
+    });
+
+
 
 
 
