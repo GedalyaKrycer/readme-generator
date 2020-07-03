@@ -127,7 +127,13 @@ inquirer
         
         ![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)
         `;
-        
+
+        fs.writeFile("customREADME.md", readmeContent, err => {
+            if (err) throw err;
+
+            console.log("You created a readme!")
+        })
+
     });
 
 
