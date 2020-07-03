@@ -24,13 +24,13 @@ inquirer
             default: 'N/A'
         },
         {
-            type: 'editor',
+            type: 'input',
             name: 'install',
             message: 'How does this project get installed?',
             default: 'N/A'
         },
         {
-            type: 'editor',
+            type: 'input',
             name: 'usage',
             message: 'Define a usage example.',
             default: 'N/A'
@@ -61,72 +61,61 @@ inquirer
         }
     ])
     .then(res => {
-        // console.log(`
-        //     ${res.gitUser}
-        //     ${res.title}
-        //     ${res.description}
-        //     ${res.install}
-        //     ${res.usage}
-        //     ${res.licence}
-        //     ${res.contribute}
-        //     ${res.tests}
-        //     ${res.questions}
-        // `);
 
         // "Hard coded framework for readme"
+        // Left aligned the template literal to remove extra space from final output. Otherwise the readme file will indent all the text.
         const readmeContent = `
-        # ${res.title}
+# ${res.title}
 
-        ## Table of Contents
-        * [Description](#description)
-        * [Installation](#installation)
-        * [Usage](#usage)
-        * [License](#license)
-        * [Contributing](#contributing)
-        * [Tests](#tests)
-        * [Questions](#questions)
+## Table of Contents
+* [Description](#description)
+* [Installation](#installation)
+* [Usage](#usage)
+* [License](#license)
+* [Contributing](#contributing)
+* [Tests](#tests)
+* [Questions](#questions)
 
-        ---
+---
 
-        ## Description
-        ${res.description}
+## Description
+${res.description}
 
-        ---
+---
 
-        ## Installation
-        ${res.install}
+## Installation
+${res.install}
 
-        ---
+---
 
-        ## Usage
-        ${res.usage}
+## Usage
+${res.usage}
 
-        ---
+---
 
-        ## License
-        ${res.licence}
+## License
+${res.licence}
 
-        ---
+---
 
-        ## Contributing
-        ${res.contribute}
+## Contributing
+${res.contribute}
 
-        ---
+---
 
-        ## Tests
-        ${res.tests}
+## Tests
+${res.tests}
 
-        ---
+---
 
-        ## Questions
-        ${res.questions}
+## Questions
+${res.questions}
 
-        ---
+---
 
-        ### Profile: github.com/${res.gitUser}
+### Profile: github.com/${res.gitUser}
         
-        ![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)
-        `;
+![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)`;
 
         fs.writeFile("customREADME.md", readmeContent, err => {
             if (err) throw err;
@@ -135,29 +124,3 @@ inquirer
         })
 
     });
-
-
-
-
-
-
-
-
-
-
-// Original Provided Code //
-
-// const questions = [
-
-// ];
-
-// function writeToFile(fileName, data) {
-// }
-
-// function init() {
-
-// }
-
-// init();
-
-// [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
